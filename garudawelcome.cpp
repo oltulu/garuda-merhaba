@@ -230,7 +230,7 @@ void garudawelcome::on_buttonTwitter_clicked()
 void garudawelcome::on_buttonBitwarden_clicked()
 {
     this->hide();
-    system("xdg-open https://bitwarden.aylinuxorg.org/");
+    system("xdg-open https://bitwarden.aylinuxorg.org");
     this->show();
 }
 
@@ -244,7 +244,7 @@ void garudawelcome::on_buttonPrivatebin_clicked()
 void garudawelcome::on_buttonCryptpad_clicked()
 {
     this->hide();
-    system("xdg-open https://pad.aylinuxorg.org/");
+    system("xdg-open https://pad.aylinuxorg.org");
     this->show();
 }
 
@@ -416,7 +416,7 @@ void garudawelcome::on_buttonSoftware_clicked()
 void garudawelcome::on_buttonInstallGaruda_clicked()
 {
     this->hide();
-    system("python3 /opt/Aylinux-Yukleyici/kur.py");
+    system("python3 /opt/Aylinux-Yukleyici/kur.py"));
     this->show();
 }
 
