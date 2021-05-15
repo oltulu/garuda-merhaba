@@ -404,7 +404,7 @@ void garudawelcome::on_buttonSystemCleaner_clicked()
 void garudawelcome::on_buttonSoftware_clicked()
 {
     this->hide();
-    if (QFile::exists("/usr/bin/mps_ui.py)) {
+    if (QFile::exists("/usr/bin/mps_ui.py)") {
         system("aysu mps_ui.py");
     } else if (QFile::exists("/usr/bin/bauh")) {
         system("bauh");
