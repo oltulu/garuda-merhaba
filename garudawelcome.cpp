@@ -71,7 +71,7 @@ void garudawelcome::setup()
     QFont f( "Noto Sans", 16, QFont::Bold);
     ui->labelTitle->setFont(f);
     ui->labelTitle->setText(description + " " + codename);
-    this->setWindowTitle(tr("Garuda  Linux'a Hoşgeldiniz"));
+    this->setWindowTitle(tr("Ayinux'a Hoşgeldiniz"));
     if (system("[ -f ~/.config/autostart/garuda-welcome.desktop ]") == 0) {
         ui->checkBox->setChecked(true);
     } else {
@@ -93,7 +93,7 @@ void garudawelcome::setup()
             if (QFile::exists("/usr/bin/setup-assistant")) {
 
                 QMessageBox::StandardButton reply;
-                reply = QMessageBox::question(nullptr, tr("Welcome to Garuda Linux!"), tr("Garuda Linux'a hoş geldiniz! Kurulumunuzu bitirmek için kurulum asistanını başlatmak ister misiniz?"),
+                reply = QMessageBox::question(nullptr, tr("Aylinuxa Hoşgeldiniz!"), tr("Aylinux'a hoş geldiniz! Kurulumunuzu bitirmek için kurulum asistanını başlatmak ister misiniz?"),
                     QMessageBox::Yes | QMessageBox::No);
                 if (reply == QMessageBox::Yes) {
                     system("setup-assistant");
@@ -164,9 +164,9 @@ void garudawelcome::on_buttonAbout_clicked()
 {
     this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
-        tr("Garuda Welcome Hakkında"), "<p align=\"center\"><b><h2>" + tr("Garuda Welcome") + "</h2></b></p><p align=\"center\">" + tr("Version: ") + version + "</p><p align=\"center\"><h3>" + tr("Garuda Linux'ta bir karşılama ekranı görüntülemek için program") + "</h3></p><p align=\"center\"><a href=\"http://www.garudalinux.org/\">http://www.garudalinux.org/</a><br /></p><p align=\"center\">" + tr("Copyright (c) Garuda Linux") + "<br /><br /></p>", 0, this);
-    msgBox.addButton(tr("License"), QMessageBox::AcceptRole);
-    msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
+        tr("Aylinux Merhaba Hakkında"), "<p align=\"center\"><b><h2>" + tr("Aylinux Merhaba") + "</h2></b></p><p align=\"center\">" + tr("Sürüm: ") + version + "</p><p align=\"center\"><h3>" + tr("Garuda Linux'ta bir karşılama ekranı görüntülemek için program") + "</h3></p><p align=\"center\"><a href=\"http://www.garudalinux.org/\">http://www.garudalinux.org/</a><br /></p><p align=\"center\">" + tr("Copyright (c) Garuda Linux") + "<br /><br /></p>", 0, this);
+    msgBox.addButton(tr("Lisans"), QMessageBox::AcceptRole);
+    msgBox.addButton(tr("İptal"), QMessageBox::NoRole);
     if (msgBox.exec() == QMessageBox::AcceptRole) {
         QString cmd = QString("xdg-open https://www.gnu.org/licenses/gpl-3.0.html");
         system(cmd.toUtf8());
@@ -405,7 +405,7 @@ void garudawelcome::on_buttonSoftware_clicked()
 {
     this->hide();
     if (QFile::exists("/usr/bin/mps_ui.py")) {
-        system("aysu mps_ui.py");
+        system("python mps_ui.py");
     } else if (QFile::exists("/usr/bin/bauh")) {
         system("bauh");
     }
@@ -455,13 +455,13 @@ bool garudawelcome::checkAndInstall(QString package)
     if (output.output == package || output.output == package + "-git")
         return true;
 
-    if (!QFile::exists("/usr/bin/pamac-installer")) {
-        QMessageBox::warning(this, tr("Başlarken hata ") + package, tr("The package \"%package%\" is not installed and pamac-installer is missing.").replace("%package%", package));
+    if (!QFile::exists("/usr/bin/mps_ui.py")) {
+        QMessageBox::warning(this, tr("Başlatma hatası ") + package, tr("TBu \"%package%\" kurulu değil ve kurulum programı bulunamadı").replace("%package%", package));
         return false;
     }
 
     this->hide();
-    runCmd("aysu paket kur " + package);
+    runCmd("paket kur " + package);
 
     // Checking pamac-installer's exit code alone is not enough. For some reason it decides to return 0 even tho it failed sometimes
     output = runCmd("paket sor " + package,  false);
