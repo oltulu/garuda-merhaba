@@ -416,7 +416,7 @@ void garudawelcome::on_buttonSoftware_clicked()
 void garudawelcome::on_buttonInstallGaruda_clicked()
 {
     this->hide();
-    system("python3 /opt/Aylinux-Yukleyici/kur.py"));
+    system("python3 /opt/Aylinux-Yukleyici/kur.py");
     this->show();
 }
 
