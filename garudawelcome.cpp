@@ -375,10 +375,10 @@ void garudawelcome::on_buttonPartition_clicked()
     } else if (QFile::exists("/usr/bin/partitionmanager")) {
         system("partitionmanager");
     } else if (QFile::exists("/usr/bin/gparted")) {
-        system("gparted");
+        system("aysu gparted");
     } else {
         if (checkAndInstall("gparted"))
-            system("gparted");
+            system("aysu gparted");
     }
 
     this->show();
@@ -405,7 +405,7 @@ void garudawelcome::on_buttonSoftware_clicked()
 {
     this->hide();
     if (QFile::exists("/usr/bin/mps_ui.py")) {
-        system("python mps_ui.py");
+        system("aysu  mps_ui.py");
     } else if (QFile::exists("/usr/bin/bauh")) {
         system("bauh");
     }
@@ -416,7 +416,7 @@ void garudawelcome::on_buttonSoftware_clicked()
 void garudawelcome::on_buttonInstallGaruda_clicked()
 {
     this->hide();
-    system("python3 /opt/Aylinux-Yukleyici/kur.py");
+    system("aysu python3 /opt/Aylinux-Yukleyici/kur.py");
     this->show();
 }
 
@@ -449,7 +449,7 @@ bool garudawelcome::checkAndInstall(QString package)
 {
     // Not async, don't really care either tho, not my problem
     // Assumption: package is a safe string
-    auto output = runCmd("paket sor" + package, false);
+    auto output = runCmd("aysu paket sor" + package, false);
 
     // If it's already installed, we are good to go
     if (output.output == package || output.output == package + "-git")
@@ -461,7 +461,7 @@ bool garudawelcome::checkAndInstall(QString package)
     }
 
     this->hide();
-    runCmd("paket kur " + package);
+    runCmd("aysu paket kur " + package);
 
     // Checking pamac-installer's exit code alone is not enough. For some reason it decides to return 0 even tho it failed sometimes
     output = runCmd("paket sor " + package,  false);
