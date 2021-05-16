@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Garuda Welcome</string>
+   <string>Garuda Hoşgeldiniz</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -50,7 +50,7 @@
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Tools</string>
+       <string>Araçlar</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0" colspan="2">
@@ -241,7 +241,7 @@ Ağ Yardımcısı</string>
        <item row="1" column="0" colspan="2">
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Extra</string>
+          <string>Diğer</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="3" column="3" alignment="Qt::AlignHCenter">
@@ -901,7 +901,7 @@ Ağ Yardımcısı</string>
         <string>Bu uygulama hakkında</string>
        </property>
        <property name="text">
-        <string>About...</string>
+        <string>Hakkında...</string>
        </property>
        <property name="icon">
         <iconset theme="help-about">
@@ -930,7 +930,7 @@ Ağ Yardımcısı</string>
         <string>Uygulamayı Kapat</string>
        </property>
        <property name="text">
-        <string>Close</string>
+        <string>Kapat</string>
        </property>
        <property name="icon">
         <iconset theme="window-close">
@@ -956,7 +956,7 @@ Ağ Yardımcısı</string>
    <item row="1" column="0" colspan="5">
     <widget class="QLabel" name="labelTitle">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Garuda Linux &amp;quot;Hawk Eagle&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Ayinux &amp;quot;Hawk Eagle&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
